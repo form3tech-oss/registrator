@@ -3,18 +3,19 @@ go:
 - 1.12.x
 services:
 - docker
+env:
+  global:
+    secure: EJm0na8OcaHuGSesw3Hf2R4fYgIMDl2l5YS3lKh2GIYTCtN1g/5JagTig8PzxPs3QCz/Hs+EQ1oWviHu9DinZCM5Pwv+2afGVSSgR1GsWCcdf1JmZTbtFGUhNvZUGXQoEhzW5Ocdce6Y3Bh/4u1APnbmchhALurnrCTQsBb1gsW7wLz8xyG1jmuac475lVg9/4S40qq7F57rxl++buGpaogeD/eZ6QJUdwz6udTKQOM+J52bcG7RsxzBmtdqsN/yTbH/3mpeXrHC+MWHvZ6UPwT5YpB7DUMV3SGXI6BKpRzIl5sTAY3KS/hzjzarkqCPfBE6tj2aJzs5jKVwvo0wQU7wK8XhduYzidyTLKs7ASMoajVfJdepP4QrszyfohyS1b1mVLEJGiCGOtgUD41f+xrKjzxJLjITd6oqeAnY+ueiS0deJ6FsmdiUNSpBySmNS9oefyVWUEWFY08a8WvPBPkCgevggVMLIw3lM92bcaXk4Gfr6CThE/3Ycvc3Li8xaFfabVf2XrXrMraPCtZm8tB59GFDIFflR3UoJMcvBjmeioNIqPh1M/ZEKVlwt/LPCoRAYF6D6p3J1JTF8mRL+NRCcX2dOInyHuHyrX7R4X8R55bCc4n089pMRpE77g9Ru1Hk3VRQtYrOzZCI2TKS/DpvurjEKpOY55SMVJ0ZHEI=
 jobs:
   include:
   - stage: test
     name: Run Go tests
     script:
     - make test
-  - stage: publish
-    if: tag IS present
-    install:
-    - wget https://github.com/goreleaser/goreleaser/releases/download/v0.95.2/goreleaser_amd64.deb
-    - sudo dpkg -i ./goreleaser_amd64.deb
-    - rm goreleaser_amd64.deb
-    - if [[ -a .git/shallow ]]; then git fetch --unshallow --tags; fi
-    script:
-    - make release
+deploy:
+  provider: script
+  script: curl -sL https://git.io/goreleaser | bash
+  skip_cleanup: true
+  api_key:
+  on:
+    tags: true
