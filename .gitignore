@@ -1,5 +1,4 @@
 .gvm_local
 release
-vendor
 bin/
 dist/
