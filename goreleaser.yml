@@ -1,0 +1,23 @@
+builds:
+  - 
+    binary: registrator
+    flags:
+    - -a
+    env:
+    - CGO_ENABLED=0
+    goos:
+    - darwin
+    - linux
+    goarch:
+    - amd64
+dockers:
+  - 
+    dockerfile: Dockerfile.release
+    binary: registrator
+    goos: linux
+    goarch: amd64
+    image_templates:
+    - "tech.form3/registrator:latest"
+    - "test.form3/registrator:{{ .Tag }}"
+    - "test.form3/registrator:v{{ .Major }}"
+    skip_push: true

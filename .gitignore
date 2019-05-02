@@ -1,4 +1,5 @@
 .gvm_local
-build
 release
 vendor
+bin/
+dist/
