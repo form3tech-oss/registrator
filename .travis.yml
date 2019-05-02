@@ -1,0 +1,20 @@
+language: go
+go:
+- 1.12.x
+services:
+- docker
+jobs:
+  include:
+  - stage: test
+    name: Run Go tests
+    script:
+    - make test
+  - stage: publish
+    if: tag IS present
+    install:
+    - wget https://github.com/goreleaser/goreleaser/releases/download/v0.95.2/goreleaser_amd64.deb
+    - sudo dpkg -i ./goreleaser_amd64.deb
+    - rm goreleaser_amd64.deb
+    - if [[ -a .git/shallow ]]; then git fetch --unshallow --tags; fi
+    script:
+    - make release
