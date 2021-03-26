@@ -1,4 +1,4 @@
-FROM alpine:3.2
+FROM alpine:3.10
 ENTRYPOINT ["/bin/usage-tracker"]
 
 EXPOSE 53/udp
