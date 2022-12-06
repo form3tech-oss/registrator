@@ -13,7 +13,6 @@ builds:
 dockers:
   - 
     dockerfile: Dockerfile.release
-    binary: registrator
     goos: linux
     goarch: amd64
     image_templates:
