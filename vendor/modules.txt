@@ -8,8 +8,9 @@ github.com/Microsoft/go-winio
 # github.com/Nvveen/Gotty v0.0.0-20120604004816-cd527374f1e5
 ## explicit
 github.com/Nvveen/Gotty
-# github.com/armon/go-metrics v0.0.0-20190430140413-ec5e00d3c878
+# github.com/armon/go-metrics v0.3.10
 ## explicit; go 1.12
+github.com/armon/go-metrics
 # github.com/cenkalti/backoff v2.0.0+incompatible
 ## explicit
 github.com/cenkalti/backoff
@@ -55,45 +56,75 @@ github.com/docker/go-connections/nat
 # github.com/docker/go-units v0.3.3
 ## explicit
 github.com/docker/go-units
+# github.com/fatih/color v1.9.0
+## explicit; go 1.13
+github.com/fatih/color
 # github.com/fsouza/go-dockerclient v1.2.0
 ## explicit
 github.com/fsouza/go-dockerclient
 # github.com/gliderlabs/pkg v0.0.0-20161206023812-36f28d47ec7a
 ## explicit
 github.com/gliderlabs/pkg/usage
-# github.com/gogo/protobuf v1.0.0
-## explicit
+# github.com/gogo/protobuf v1.3.2
+## explicit; go 1.15
 github.com/gogo/protobuf/proto
-# github.com/google/go-cmp v0.3.0
+# github.com/google/btree v1.0.0
+## explicit
+# github.com/google/go-cmp v0.5.6
 ## explicit; go 1.8
 # github.com/gotestyourself/gotestyourself v2.2.0+incompatible
 ## explicit
-# github.com/hashicorp/consul v1.0.7
-## explicit
+# github.com/hashicorp/consul/api v1.11.0
+## explicit; go 1.12
 github.com/hashicorp/consul/api
-# github.com/hashicorp/go-cleanhttp v0.5.0
+# github.com/hashicorp/go-cleanhttp v0.5.1
 ## explicit
 github.com/hashicorp/go-cleanhttp
-# github.com/hashicorp/go-msgpack v0.5.4
+# github.com/hashicorp/go-hclog v0.14.1
+## explicit; go 1.13
+github.com/hashicorp/go-hclog
+# github.com/hashicorp/go-immutable-radix v1.3.0
 ## explicit
-# github.com/hashicorp/go-rootcerts v0.0.0-20160503143440-6bb64b370b90
+github.com/hashicorp/go-immutable-radix
+# github.com/hashicorp/go-msgpack v0.5.5
 ## explicit
+# github.com/hashicorp/go-multierror v1.1.1
+## explicit; go 1.13
+# github.com/hashicorp/go-rootcerts v1.0.2
+## explicit; go 1.12
 github.com/hashicorp/go-rootcerts
-# github.com/hashicorp/go-uuid v1.0.1
+# github.com/hashicorp/go-sockaddr v1.0.2
 ## explicit
-# github.com/hashicorp/memberlist v0.1.3
+# github.com/hashicorp/go-uuid v1.0.2
 ## explicit
-# github.com/hashicorp/serf v0.8.1
-## explicit
+# github.com/hashicorp/golang-lru v0.5.4
+## explicit; go 1.12
+github.com/hashicorp/golang-lru/simplelru
+# github.com/hashicorp/serf v0.10.0
+## explicit; go 1.12
 github.com/hashicorp/serf/coordinate
-# github.com/miekg/dns v1.0.14
+# github.com/konsorten/go-windows-terminal-sequences v1.0.2
 ## explicit
+github.com/konsorten/go-windows-terminal-sequences
+# github.com/kr/pretty v0.2.1
+## explicit; go 1.12
+# github.com/mattn/go-colorable v0.1.6
+## explicit; go 1.13
+github.com/mattn/go-colorable
+# github.com/mattn/go-isatty v0.0.12
+## explicit; go 1.12
+github.com/mattn/go-isatty
+# github.com/miekg/dns v1.1.41
+## explicit; go 1.13
 github.com/miekg/dns
-# github.com/mitchellh/go-homedir v0.0.0-20161203194507-b8bc1bf76747
+# github.com/mitchellh/go-homedir v1.1.0
 ## explicit
 github.com/mitchellh/go-homedir
-# github.com/mitchellh/go-testing-interface v1.0.0
-## explicit
+# github.com/mitchellh/go-testing-interface v1.14.0
+## explicit; go 1.14
+# github.com/mitchellh/mapstructure v1.4.1-0.20210112042008-8ebf2d61a8b4
+## explicit; go 1.14
+github.com/mitchellh/mapstructure
 # github.com/opencontainers/go-digest v1.0.0-rc1
 ## explicit
 github.com/opencontainers/go-digest
@@ -107,8 +138,6 @@ github.com/opencontainers/runc/libcontainer/system
 github.com/opencontainers/runc/libcontainer/user
 # github.com/opencontainers/selinux v1.2.2
 ## explicit
-# github.com/pascaldekloe/goe v0.1.0
-## explicit
 # github.com/pkg/errors v0.8.1
 ## explicit
 github.com/pkg/errors
@@ -118,19 +147,14 @@ github.com/pmezard/go-difflib/difflib
 # github.com/samuel/go-zookeeper v0.0.0-20180130194729-c4fab1ac1bec
 ## explicit
 github.com/samuel/go-zookeeper/zk
-# github.com/sirupsen/logrus v1.0.5
+# github.com/sirupsen/logrus v1.4.2
 ## explicit
 github.com/sirupsen/logrus
-# github.com/stretchr/testify v1.3.0
-## explicit
+# github.com/stretchr/testify v1.7.0
+## explicit; go 1.13
 github.com/stretchr/testify/assert
-# golang.org/x/crypto v0.0.0-20181029021203-45a5f77698d3
-## explicit
-golang.org/x/crypto/ed25519
-golang.org/x/crypto/ed25519/internal/edwards25519
-golang.org/x/crypto/ssh/terminal
-# golang.org/x/net v0.0.0-20181201002055-351d144fa1fc
-## explicit
+# golang.org/x/net v0.0.0-20211209124913-491a49abca63
+## explicit; go 1.17
 golang.org/x/net/bpf
 golang.org/x/net/context
 golang.org/x/net/context/ctxhttp
@@ -138,18 +162,16 @@ golang.org/x/net/internal/iana
 golang.org/x/net/internal/socket
 golang.org/x/net/ipv4
 golang.org/x/net/ipv6
-# golang.org/x/sync v0.0.0-20181221193216-37e7f081c4d4
-## explicit
-# golang.org/x/sys v0.0.0-20181026203630-95b1ffbd15a5
-## explicit
+# golang.org/x/sys v0.0.0-20220728004956-3c1f35247d10
+## explicit; go 1.17
+golang.org/x/sys/internal/unsafeheader
 golang.org/x/sys/unix
 golang.org/x/sys/windows
-# gopkg.in/airbrake/gobrake.v2 v2.0.9
-## explicit
 # gopkg.in/coreos/go-etcd.v0 v0.4.6
 ## explicit
 gopkg.in/coreos/go-etcd.v0/etcd
-# gopkg.in/gemnasium/logrus-airbrake-hook.v2 v2.1.2
+# gopkg.in/yaml.v3 v3.0.0-20200313102051-9f266ea9e77c
 ## explicit
+gopkg.in/yaml.v3
 # gotest.tools v2.2.0+incompatible
 ## explicit
