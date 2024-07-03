@@ -246,9 +246,16 @@ func (b *Bridge) add(containerId string, quiet bool) {
 	}
 }
 
+func getServiceNameFromImage(image string) string {
+	return strings.Split(
+		strings.Split(path.Base(image), ":")[0],
+		"@",
+	)[0]
+}
+
 func (b *Bridge) newService(port ServicePort, isgroup bool) *Service {
 	container := port.container
-	defaultName := strings.Split(path.Base(container.Config.Image), ":")[0]
+	defaultName := getServiceNameFromImage(container.Config.Image)
 
 	// not sure about this logic. kind of want to remove it.
 	hostname := Hostname
